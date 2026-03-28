@@ -8,7 +8,8 @@ struct ContentView: View {
     @State private var showingSettings = false
 
     var body: some View {
-        VStack(spacing: 0) {
+        ScrollView {
+            VStack(spacing: 0) {
             HStack {
                 Text("QuickMemo")
                     .font(.headline)
@@ -64,8 +65,9 @@ struct ContentView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
+            }
         }
-        .frame(width: noteStore.windowSize.width, height: noteStore.windowSize.height)
+        .frame(minWidth: 400, minHeight: 500)
         .keyboardShortcuts(noteStore: noteStore, showingSearch: $showingSearch, onSave: {})
         .sheet(isPresented: $showingSettings) {
             SettingsView(noteStore: noteStore)
