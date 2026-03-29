@@ -14,19 +14,19 @@ struct SettingsView: View {
                 Section("Window Size") {
                     HStack {
                         Text("Width:")
-                        TextField("Width", value: Binding(
-                            get: { noteStore.windowSize.width },
+                        TextField("Width", value: Binding<Double>(
+                            get: { Double(noteStore.windowSize.width) },
                             set: { newWidth in
-                                noteStore.windowSize.width = max(400, min(1200, newWidth))
+                                noteStore.windowSize.width = CGFloat(max(400, min(1200, newWidth)))
                             }
                         ), format: .number)
                         .frame(width: 80)
 
                         Text("Height:")
-                        TextField("Height", value: Binding(
-                            get: { noteStore.windowSize.height },
+                        TextField("Height", value: Binding<Double>(
+                            get: { Double(noteStore.windowSize.height) },
                             set: { newHeight in
-                                noteStore.windowSize.height = max(300, min(900, newHeight))
+                                noteStore.windowSize.height = CGFloat(max(300, min(900, newHeight)))
                             }
                         ), format: .number)
                         .frame(width: 80)

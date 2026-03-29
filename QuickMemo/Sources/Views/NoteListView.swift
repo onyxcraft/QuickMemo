@@ -49,7 +49,7 @@ struct NoteRowView: View {
 
             Text(formatDate(note.modifiedAt))
                 .font(.system(size: 10))
-                .foregroundColor(.tertiary)
+                .foregroundStyle(.tertiary)
         }
         .padding(.vertical, 4)
         .background(isSelected ? Color.accentColor.opacity(0.2) : Color.clear)
