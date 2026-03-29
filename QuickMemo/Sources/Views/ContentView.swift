@@ -60,7 +60,7 @@ struct ContentView: View {
                             .foregroundColor(.secondary)
                         Text("Create a new note or select one from the list")
                             .font(.caption)
-                            .foregroundColor(.tertiary)
+                            .foregroundStyle(.tertiary)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
